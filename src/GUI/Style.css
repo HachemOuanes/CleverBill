@@ -1,0 +1,31 @@
+
+.loginButton{
+    -fx-font: 16px "System";
+    -fx-padding: 9;
+    -fx-background-color: #46d9f3;
+    -fx-background-color: linear-gradient(from 0% 25% to 100% 100%, #4f4feb, #82dcdc);
+    -fx-background-radius:10;
+    -fx-border-color:transparent;
+}
+
+.loginButton:hover{
+  -fx-background-color: linear-gradient(from 30% 25% to 100% 100%, #4f4feb, #82dcdc);
+   
+}
+
+.textField{
+	-fx-text-box-border: #82dcdc; 
+ 	-fx-padding: 8;
+	-fx-background-radius:15;
+}
+
+
+.closeButton{
+    -fx-background-radius:20;
+    -fx-background-color: #f04f4f;
+}
+
+.closeButton:hover{
+    -fx-background-color: #c73535;
+	
+}
