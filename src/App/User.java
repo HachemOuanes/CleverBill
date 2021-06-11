@@ -1,7 +1,10 @@
 package App;
 
 import Admin.Affiliation;
+import Database.Connector;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class User {
@@ -11,7 +14,17 @@ public class User {
     protected int phone_number;
     protected ArrayList<Affiliation> enrolled;
 
-
+    public Boolean Authorized(String email, String password) throws SQLException {
+        String query =  "select * from user where email='"+email+"' and password='"+password+"'";
+        Connector login = new Connector();
+        ResultSet result = login.read(query);
+        if (result.next() == false) {
+            login.end();
+            return false;
+        }
+        login.end();
+        return true;
+    }
     // Getters
 
     public int getPhone_number() {

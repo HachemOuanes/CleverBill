@@ -1,11 +1,14 @@
 package GUI;
 
+import Database.Connector;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.sql.ResultSet;
 
 public class Main extends Application {
 
@@ -21,5 +24,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+//        Connector connect = new Connector();
+//        ResultSet result = connect.read("select * from user");
+//        System.o
     }
 }

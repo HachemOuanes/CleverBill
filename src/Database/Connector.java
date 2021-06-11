@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class Connector {
 
-    private static Connection start = null;
-    private static Statement statement = null;
+    private Connection start = null;
+    private Statement statement = null;
     private ResultSet result = null;
 
-    private static void connect() {
+    private void connect() {
         try {
             start = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/billingsystem", "root", "root");
         } catch (SQLException ex) {
@@ -18,7 +18,6 @@ public class Connector {
     }
 
     public ResultSet read(String query) throws SQLException {
-
         try {
             connect();
             statement = start.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -40,6 +39,12 @@ public class Connector {
             ex.printStackTrace();
         }
         return result;
+    }
+
+    public void end() throws SQLException {
+        start.close();
+        statement.close();
+        result.close();
     }
 
 }

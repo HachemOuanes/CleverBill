@@ -26,7 +26,7 @@
       <AnchorPane prefHeight="600.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="close_button" layoutX="462.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
-            <TextField fx:id="username_field" alignment="CENTER" layoutX="174.0" layoutY="272.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="textField" />
+            <TextField fx:id="email_field" alignment="CENTER" layoutX="174.0" layoutY="272.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="textField" />
             <PasswordField fx:id="password_field" alignment="CENTER" layoutX="174.0" layoutY="317.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField" />
             <Button fx:id="login_button" layoutX="191.0" layoutY="436.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="166.0" styleClass="loginButton" text="Log In" textAlignment="CENTER" textFill="WHITE">
                <font>
