@@ -1,16 +1,28 @@
 
-.loginButton{
+.lightButton{
     -fx-font: 16px "System";
-    -fx-padding: 9;
+    -fx-padding: 8;
     -fx-background-color: #46d9f3;
     -fx-background-color: linear-gradient(from 0% 25% to 100% 100%, #4f4feb, #82dcdc);
     -fx-background-radius:10;
     -fx-border-color:transparent;
 }
 
-.loginButton:hover{
+.lightButton:hover{
   -fx-background-color: linear-gradient(from 30% 25% to 100% 100%, #4f4feb, #82dcdc);
-   
+}
+
+.darkButton{
+    -fx-font: 16px "System";
+    -fx-padding: 8;
+    -fx-background-color: #46d9f3;
+    -fx-background-color: linear-gradient(from 0% 25% to 100% 100%, #035bac, #67c4e3);
+    -fx-background-radius:50;
+    -fx-border-color:transparent;
+}
+
+.darkButton:hover{
+  -fx-background-color: linear-gradient(from 30% 25% to 100% 100%, #035bac, #67c4e3);
 }
 
 .textField{
@@ -19,10 +31,60 @@
 	-fx-background-radius:15;
 }
 
+.textField2{
+	-fx-text-box-border: #82dcdc; 
+ 	-fx-padding: 8;
+	-fx-background-radius:8;
+}
+
 
 .closeButton{
-    -fx-background-radius:20;
+    -fx-background-radius:5;
     -fx-background-color: #f04f4f;
+}
+
+.linkButtonSignup{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em;
+    -fx-text-fill: #828282;
+}
+.linkButtonSignup:hover{
+    -fx-border-color: transparent, black;
+    -fx-border-width: 0.2, 0.2;
+    -fx-border-style: solid, segments(1, 1);
+
+}
+.linkButtonSignup:pressed{
+    -fx-background-color: #1d253e;
+}
+
+
+
+.linkButtonLogin{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em;
+    -fx-text-fill: #828282;
+}
+.linkButtonLogin:hover{
+    -fx-border-color: transparent, black;
+    -fx-border-width: 0.2, 0.2;
+    -fx-border-style: solid, segments(1, 1);
+
+}
+.linkButtonLogin:pressed{
+    -fx-background-color: #f1ffff;
+}
+
+.homeBackground{
+    -fx-background-color: f4f4f4;
 }
 
 .closeButton:hover{

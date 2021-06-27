@@ -6,16 +6,35 @@ import Database.Connector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class User {
 
-    protected long user_id, national_id;
-    protected String first_name, last_name, password, email, address, date_of_birth;
-    protected int phone_number;
+    protected String first_name, last_name, password, email, address;
+    protected int user_id, national_id,phone_number;
     protected ArrayList<Affiliation> enrolled;
+    protected Date creation_date, date_of_birth;
 
-    public Boolean Authorized(String email, String password) throws SQLException {
-        String query =  "select * from user where email='"+email+"' and password='"+password+"'";
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(int user_id, int national_id, String first_name, String last_name, String password, String email, String address, Date creation_date, int phone_number) {
+        this.user_id = user_id;
+        this.national_id = national_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.creation_date = creation_date;
+        this.phone_number = phone_number;
+    }
+
+    public Boolean Authorized() throws SQLException {
+        String query = "select * from user where email='" + this.email + "' and password='" + this.password + "'";
         Connector login = new Connector();
         ResultSet result = login.read(query);
         if (result.next() == false) {
@@ -25,32 +44,16 @@ public class User {
         login.end();
         return true;
     }
-    // Getters
 
-    public int getPhone_number() {
-        return phone_number;
-    }
-
-    public ArrayList<Affiliation> getEnrolled() {
-        return enrolled;
-    }
-
-    public long getNational_id() { return national_id; }
-
-    public long getUser_id() {
-        return user_id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getDate_of_birth() {
-        return date_of_birth;
-    }
-
-    public String getEmail() {
-        return email;
+    public int AddUser() throws SQLException {
+//        String query = "insert into user (user_id, first_name, last_name ,password, email, phone_number, national_id, address, creation_date) "
+//                + " values( " + this.user_id + "," + this.first_name + "," + this.last_name + "," + this.password + "," + this.email + "," + this.phone_number + ","
+//                + this.national_id + "," + this.address+"," + this.creation_date + ")";
+        String query = " insert into user (user_id, first_name, last_name ,password, email, phone_number, national_id) " +
+                "values('50','aa','aa','zz','aa','123','123')";
+        Connector register = new Connector();
+        int result = register.create(query);
+        return result;
     }
 
     public String getFirst_name() {
@@ -65,41 +68,27 @@ public class User {
         return password;
     }
 
-    // Setters
-
-    public void setAddress(String address) { this.address = address; }
-
-    public void setDate_of_birth(String date_of_birth) { this.date_of_birth = date_of_birth; }
-
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone_number(int phone_number) {
-        this.phone_number = phone_number;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setNational_id(long national_id) {
-        this.national_id = national_id;
+    public int getNational_id() {
+        return national_id;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public int getPhone_number() {
+        return phone_number;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
-    }
-
-    public void setEnrolled(ArrayList<Affiliation> enrolled) {
-        this.enrolled = enrolled;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public Date getCreation_date() {
+        return creation_date;
     }
 }

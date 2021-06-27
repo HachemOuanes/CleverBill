@@ -7,6 +7,7 @@ public class Connector {
     private Connection start = null;
     private Statement statement = null;
     private ResultSet result = null;
+    private int update = 0;
 
     private void connect() {
         try {
@@ -29,16 +30,16 @@ public class Connector {
         return result;
     }
 
-    public ResultSet create(String query) throws SQLException {
+    public int create(String query) throws SQLException {
         try {
             connect();
             statement = start.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            result = statement.executeQuery(query);
+            update = statement.executeUpdate(query);
         } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
             ex.printStackTrace();
         }
-        return result;
+        return update;
     }
 
     public void end() throws SQLException {
