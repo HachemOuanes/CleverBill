@@ -25,6 +25,21 @@
   -fx-background-color: linear-gradient(from 30% 25% to 100% 100%, #035bac, #67c4e3);
 }
 
+.setButton{
+      -fx-font: 22px "Berlin Sans FB";
+      -fx-padding: 8;
+      -fx-background-color: #46d9f3;
+      -fx-background-color: linear-gradient(from 0% 25% to 100% 100%, #428de3, #41e8ad);
+      -fx-background-radius:5;
+      -fx-border-color:transparent;
+}
+
+.setButton:hover{
+  -fx-background-color: linear-gradient(from 50% 80% to 100% 100%, #428de3, #41e8ad);
+}
+
+.
+
 .textField{
 	-fx-text-box-border: #82dcdc; 
  	-fx-padding: 8;
@@ -52,6 +67,7 @@
     -fx-font-size: 1em;
     -fx-text-fill: #828282;
 }
+
 .linkButtonSignup:hover{
     -fx-border-color: transparent, black;
     -fx-border-width: 0.2, 0.2;
@@ -90,3 +106,57 @@
 .closeButton:hover{
     -fx-background-color: #c73535;
 }
+
+.welcomeLabel{
+    -fx-text-alignment:center;
+}
+
+.stegButton{
+      -fx-font: 22px "Berlin Sans FB";
+      -fx-padding: 2;
+      -fx-background-color: #a9ff68;
+      -fx-background-radius:25;
+      -fx-border-color:transparent;
+}
+
+.topnetButton{
+      -fx-font: 22px "Berlin Sans FB";
+      -fx-padding: 2;
+      -fx-background-color: #ff3d43;
+      -fx-background-radius:25;
+      -fx-border-color:transparent;
+}
+
+.sonedeButton{
+      -fx-font: 22px "Berlin Sans FB";
+      -fx-padding: 2;
+      -fx-background-color: #ff638a;
+      -fx-background-radius:25;
+      -fx-border-color:transparent;
+}
+
+.stegButton:hover{
+    -fx-padding: 3;
+    -fx-background-radius:15;
+}
+
+.topnetButton:hover{
+    -fx-padding: 3;
+    -fx-background-radius:15;
+}
+
+.sonedeButton:hover{
+    -fx-padding: 3;
+    -fx-background-radius:15;
+}
+
+.sycnhronizeButton{
+     -fx-background-color: #1d2530;
+     -fx-background-radius:25;
+}
+
+.sycnhronizeButton:hover{
+     -fx-background-color: #1a2028;
+}
+
+

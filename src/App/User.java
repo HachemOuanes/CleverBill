@@ -2,6 +2,7 @@ package App;
 
 import Admin.Affiliation;
 import Database.Connector;
+import GUI.Session;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,14 +22,13 @@ public class User {
         this.password = password;
     }
 
-    public User(int user_id, int national_id, String first_name, String last_name, String password, String email, String address, Date creation_date, int phone_number) {
+    public User(int user_id, int national_id, String first_name, String last_name, String password, String email, Date creation_date, int phone_number) {
         this.user_id = user_id;
         this.national_id = national_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.password = password;
         this.email = email;
-        this.address = address;
         this.creation_date = creation_date;
         this.phone_number = phone_number;
     }
@@ -41,18 +41,19 @@ public class User {
             login.end();
             return false;
         }
+        Session.id = result.getInt("user_id");
         login.end();
         return true;
     }
 
     public int AddUser() throws SQLException {
-//        String query = "insert into user (user_id, first_name, last_name ,password, email, phone_number, national_id, address, creation_date) "
-//                + " values( " + this.user_id + "," + this.first_name + "," + this.last_name + "," + this.password + "," + this.email + "," + this.phone_number + ","
-//                + this.national_id + "," + this.address+"," + this.creation_date + ")";
-        String query = " insert into user (user_id, first_name, last_name ,password, email, phone_number, national_id) " +
-                "values('50','aa','aa','zz','aa','123','123')";
+        String query = "insert into user (user_id, first_name, last_name ,password, email, phone_number, national_id, creation_date) "
+                + " values( '" + this.user_id + "','" + this.first_name + "','" + this.last_name + "','" + this.password + "','" + this.email + "','" + this.phone_number + "','"
+                + this.national_id + "','" + this.creation_date + " ')";
+
         Connector register = new Connector();
         int result = register.create(query);
+        register.end();
         return result;
     }
 

@@ -45,7 +45,6 @@ public class Connector {
     public void end() throws SQLException {
         start.close();
         statement.close();
-        result.close();
     }
 
 }

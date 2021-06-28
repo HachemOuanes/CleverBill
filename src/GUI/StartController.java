@@ -1,10 +1,12 @@
 package GUI;
 
 import Admin.Affiliation;
+import Admin.Service;
 import App.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -20,8 +22,10 @@ import java.io.File;
 import java.net.URL;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class StartController implements Initializable {
@@ -57,6 +61,9 @@ public class StartController implements Initializable {
     @FXML
     private ImageView background_view;
 
+    @FXML
+    private ImageView background_view_welcome;
+
 
     @FXML
     private TextField register_email_field;
@@ -85,6 +92,45 @@ public class StartController implements Initializable {
     @FXML
     private Label register_message;
 
+    @FXML
+    private BorderPane welcomePane;
+
+    @FXML
+    private BorderPane servicePane;
+
+    @FXML
+    private Button accept_button;
+
+    @FXML
+    private Label welcome_label;
+
+    @FXML
+    private BorderPane topnetPane;
+
+    @FXML
+    private BorderPane stegPane;
+
+    @FXML
+    private BorderPane sonedePane;
+
+    @FXML
+    private TextField sonede_reference_field;
+
+    @FXML
+    private TextField sonede_phone_field;
+
+    @FXML
+    private TextField steg_reference_field;
+
+    @FXML
+    private TextField steg_phone_field;
+
+    @FXML
+    private TextField topnet_reference_field;
+
+    @FXML
+    private TextField topnet_phone_field;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,10 +157,13 @@ public class StartController implements Initializable {
         String email = email_field.getText().toString();
         String password = password_field.getText().toString();
         User user = new User(email, password);
+        Session.email = email;
         if (!(user.Authorized())) {
             login_message.setText("Failed to log in. User not found");
             return;
         }
+        System.out.println(Session.id);
+
         Stage stage = (Stage) close_button.getScene().getWindow();
         stage.close();
     }
@@ -149,25 +198,70 @@ public class StartController implements Initializable {
         }
         String first_name = first_field.getText().toString();
         String last_name = last_field.getText().toString();
-        String email = email_field.getText().toString();
-        String address = email_field.getText().toString();
-        int user_id = 100;
+        String email = register_email_field.getText().toString();
+        Random rand = new Random();
+        int user_id = rand.nextInt(Integer.MAX_VALUE);
         int national_id = Integer.parseInt(national_field.getText().toString());
         int phone_number = Integer.parseInt(phone_field.getText().toString());
-        Date creation_date = new Date();
-        User user = new User(user_id, national_id, first_name, last_name, password, email, address, creation_date, phone_number);
-        //user.AddUser();
-        System.out.println(user.AddUser());
-
-        Stage stage = (Stage) close_button.getScene().getWindow();
-        stage.close();
+        java.sql.Date creation_date = new java.sql.Date((new Date()).getTime());
+        User user = new User(user_id, national_id, first_name, last_name, password, email, creation_date, phone_number);
+        user.AddUser();
+        Session.email = email;
+        Session.id = user_id;
+        welcome_label.setAlignment(Pos.CENTER);
+        welcome_label.setText("Welcome " + first_name + "!");
+        welcomePane.toFront();
     }
+
 
     public void closeButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) close_button.getScene().getWindow();
         stage.close();
     }
 
+    public void setUpButtonOnAction(ActionEvent event) {
+        servicePane.toFront();
+    }
+
+    public void stegButtonOnAction(ActionEvent event) {
+        stegPane.toFront();
+    }
+
+    public void topnetButtonOnAction(ActionEvent event) {
+        topnetPane.toFront();
+    }
+
+    public void sonedeButtonOnAction(ActionEvent event) {
+        sonedePane.toFront();
+    }
+
+
+    public void sonedeSynchronizeButtonOnAction(ActionEvent event) throws SQLException {
+        int reference = Integer.parseInt(sonede_reference_field.getText().toString());
+        int phone = Integer.parseInt(sonede_reference_field.getText().toString());
+        Affiliation sonede = new Affiliation(phone, reference, 100, Affiliation.AffiliationType.SONEDE);
+        sonede.addAffiliation();
+        System.out.println(Session.id + " SYNCHRONIZED");
+        servicePane.toFront();
+    }
+
+    public void stegSynchronizeButtonOnAction(ActionEvent event) throws SQLException {
+        int reference = Integer.parseInt(steg_reference_field.getText().toString());
+        int phone = Integer.parseInt(steg_reference_field.getText().toString());
+        Affiliation steg = new Affiliation(phone, reference, 200, Affiliation.AffiliationType.STEG);
+        steg.addAffiliation();
+        System.out.println(Session.id + " SYNCHRONIZED");
+        servicePane.toFront();
+    }
+
+    public void topentSynchronizeButtonOnAction(ActionEvent event) throws SQLException {
+        int reference = Integer.parseInt(steg_reference_field.getText().toString());
+        int phone = Integer.parseInt(steg_reference_field.getText().toString());
+        Affiliation topnet = new Affiliation(phone, reference, 300, Affiliation.AffiliationType.TOPNET);
+        topnet.addAffiliation();
+        System.out.println(Session.id + " SYNCHRONIZED");
+        servicePane.toFront();
+    }
 
 }
 
