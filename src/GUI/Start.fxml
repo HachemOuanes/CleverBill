@@ -21,222 +21,6 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StartController">
    <children>
-      <BorderPane fx:id="topnetPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
-         <center>
-            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/background.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="close_button12" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
-                  <GridPane alignment="CENTER" layoutX="67.0" layoutY="160.0" prefHeight="373.0" prefWidth="480.0">
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="283.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="0.0" prefWidth="41.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <ImageView fitHeight="160.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Image/topnetLogo.png" />
-                           </image>
-                        </ImageView>
-                        <Separator orientation="VERTICAL" prefHeight="190.0" prefWidth="38.0" GridPane.columnIndex="1" />
-                        <Label contentDisplay="CENTER" prefHeight="110.0" prefWidth="255.0" style="-fx-text-alignment: center;" styleClass="welcomeText" text="For inqueries about your TOPNET information call : 74 442 742" textFill="#f54040" textOverrun="CENTER_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="Berlin Sans FB" size="25.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </GridPane>
-                  <TextField fx:id="topnet_reference_field" alignment="CENTER" layoutX="524.0" layoutY="223.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Reference" styleClass="textField2" />
-                  <TextField fx:id="topnet_phone_field1" alignment="CENTER" layoutX="524.0" layoutY="267.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Associated number" styleClass="textField2" />
-                  <Button fx:id="topnet_synchronize_button" layoutX="561.0" layoutY="373.0" mnemonicParsing="false" onAction="#topentSynchronizeButtonOnAction" prefHeight="156.0" prefWidth="126.0" styleClass="sycnhronizeButton">
-                     <graphic>
-                        <ImageView fitHeight="158.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" styleClass="sycnhronizeButton">
-                           <image>
-                              <Image url="@../Image/synchronize.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-      <BorderPane fx:id="registerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
-         <center>
-            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fx:id="background_view" fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../public/Images/background.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="close_button" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
-                  <TextField fx:id="register_email_field" alignment="CENTER" layoutX="350.0" layoutY="163.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Email" styleClass="textField2" />
-                  <TextField fx:id="first_field" alignment="CENTER" layoutX="350.0" layoutY="208.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="First name" styleClass="textField2" />
-                  <TextField fx:id="last_field" alignment="CENTER" layoutX="350.0" layoutY="253.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Last name" styleClass="textField2" />
-                  <TextField fx:id="phone_field" alignment="CENTER" layoutX="350.0" layoutY="298.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Phone number" styleClass="textField2" />
-                  <TextField fx:id="national_field" alignment="CENTER" layoutX="350.0" layoutY="343.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="National ID" styleClass="textField2" />
-                  <PasswordField fx:id="register_password_field" alignment="CENTER" layoutX="350.0" layoutY="388.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
-                  <PasswordField fx:id="register_repassword_field" alignment="CENTER" layoutX="350.0" layoutY="433.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
-                  <Button fx:id="register_button" layoutX="367.0" layoutY="523.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="10.0" prefWidth="166.0" styleClass="darkButton" text="Register" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="register_message" contentDisplay="CENTER" layoutX="21.0" layoutY="13.0" prefHeight="26.0" prefWidth="270.0" textFill="#ba2525" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="switch_to_login" layoutX="690.0" layoutY="560.0" mnemonicParsing="false" onAction="#loginSwitchButtonOnAction" prefHeight="26.0" prefWidth="197.0" styleClass="linkButtonSignup" text="Have account? Log In" textAlignment="CENTER">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <textFill>
-                        <RadialGradient centerX="0.23777777353922525" centerY="0.4732824136282652" radius="0.5654205874861957">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.007680491551459294">
-                                 <color>
-                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.4172709584236145" green="0.7646465301513672" blue="0.8105263113975525" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </RadialGradient>
-                     </textFill>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-      <BorderPane fx:id="sonedePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
-         <center>
-            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/background.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="close_button1" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
-                  <GridPane alignment="CENTER" layoutX="67.0" layoutY="160.0" prefHeight="373.0" prefWidth="480.0">
-                     <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="283.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="0.0" prefWidth="41.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="113.0" prefWidth="257.0" style="-fx-text-alignment: center;" styleClass="welcomeText" text="For inqueries about your SONEDE information call : 71 887 000" textFill="#f56b9b" textOverrun="CENTER_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="Berlin Sans FB" size="25.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="160.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Image/sonedeLogo.png" />
-                           </image>
-                        </ImageView>
-                        <Separator orientation="VERTICAL" prefHeight="190.0" prefWidth="38.0" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
-                  <TextField fx:id="sonede_reference_field" alignment="CENTER" layoutX="524.0" layoutY="223.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Reference" styleClass="textField2" />
-                  <TextField fx:id="sonede_phone_field" alignment="CENTER" layoutX="524.0" layoutY="267.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Associated number" styleClass="textField2" />
-                  <Button fx:id="sonede_synchronize_button" layoutX="561.0" layoutY="373.0" mnemonicParsing="false" onAction="#sonedeSynchronizeButtonOnAction" prefHeight="156.0" prefWidth="126.0" styleClass="sycnhronizeButton">
-                     <graphic>
-                        <ImageView fitHeight="158.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" styleClass="sycnhronizeButton">
-                           <image>
-                              <Image url="@../Image/synchronize.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-      <BorderPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
-         <left>
-            <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fx:id="home_view" fitHeight="600.0" fitWidth="400.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../public/Images/homedark.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-         </left>
-         <right>
-            <AnchorPane prefHeight="600.0" prefWidth="500.0" styleClass="homeBackground" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="close_button" layoutX="462.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
-                  <TextField fx:id="email_field" alignment="CENTER" layoutX="174.0" layoutY="272.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Email" styleClass="textField2" />
-                  <PasswordField fx:id="password_field" alignment="CENTER" layoutX="174.0" layoutY="317.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
-                  <Button fx:id="login_button" layoutX="191.0" layoutY="476.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="166.0" styleClass="darkButton" text="Log In" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <ImageView fx:id="logo_view" fitHeight="148.0" fitWidth="115.0" layoutX="220.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../public/Images/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="login_message" contentDisplay="CENTER" layoutX="23.0" layoutY="13.0" prefHeight="26.0" prefWidth="218.0" textAlignment="CENTER" textFill="#ba2525" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="switch_to_register" layoutX="290.0" layoutY="560.0" mnemonicParsing="false" onAction="#registerSwitchButtonOnAction" prefHeight="26.0" prefWidth="197.0" styleClass="linkButtonLogin" text="New here? Create Account" textAlignment="CENTER">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <textFill>
-                        <RadialGradient centerX="0.23777777353922525" centerY="0.4732824136282652" radius="0.5654205874861957">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.007680491551459294">
-                                 <color>
-                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.4172709584236145" green="0.7646465301513672" blue="0.8105263113975525" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </RadialGradient>
-                     </textFill>
-                  </Button>
-               </children>
-            </AnchorPane>
-         </right>
-      </BorderPane>
       <BorderPane fx:id="stegPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
          <center>
             <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
@@ -484,6 +268,222 @@
                </children>
             </AnchorPane>
          </center>
+      </BorderPane>
+      <BorderPane fx:id="topnetPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/background.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="close_button12" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
+                  <GridPane alignment="CENTER" layoutX="67.0" layoutY="160.0" prefHeight="373.0" prefWidth="480.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="283.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="0.0" prefWidth="41.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="160.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/topnetLogo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" prefHeight="190.0" prefWidth="38.0" GridPane.columnIndex="1" />
+                        <Label contentDisplay="CENTER" prefHeight="110.0" prefWidth="255.0" style="-fx-text-alignment: center;" styleClass="welcomeText" text="For inqueries about your TOPNET information call : 74 442 742" textFill="#f54040" textOverrun="CENTER_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Berlin Sans FB" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="topnet_reference_field" alignment="CENTER" layoutX="524.0" layoutY="223.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Reference" styleClass="textField2" />
+                  <TextField fx:id="topnet_phone_field1" alignment="CENTER" layoutX="524.0" layoutY="267.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Associated number" styleClass="textField2" />
+                  <Button fx:id="topnet_synchronize_button" layoutX="561.0" layoutY="373.0" mnemonicParsing="false" onAction="#topentSynchronizeButtonOnAction" prefHeight="156.0" prefWidth="126.0" styleClass="sycnhronizeButton">
+                     <graphic>
+                        <ImageView fitHeight="158.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" styleClass="sycnhronizeButton">
+                           <image>
+                              <Image url="@../Image/synchronize.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="registerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="background_view" fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../public/Images/background.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="close_button" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
+                  <TextField fx:id="register_email_field" alignment="CENTER" layoutX="350.0" layoutY="163.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Email" styleClass="textField2" />
+                  <TextField fx:id="first_field" alignment="CENTER" layoutX="350.0" layoutY="208.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="First name" styleClass="textField2" />
+                  <TextField fx:id="last_field" alignment="CENTER" layoutX="350.0" layoutY="253.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Last name" styleClass="textField2" />
+                  <TextField fx:id="phone_field" alignment="CENTER" layoutX="350.0" layoutY="298.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Phone number" styleClass="textField2" />
+                  <TextField fx:id="national_field" alignment="CENTER" layoutX="350.0" layoutY="343.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="National ID" styleClass="textField2" />
+                  <PasswordField fx:id="register_password_field" alignment="CENTER" layoutX="350.0" layoutY="388.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
+                  <PasswordField fx:id="register_repassword_field" alignment="CENTER" layoutX="350.0" layoutY="433.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
+                  <Button fx:id="register_button" layoutX="367.0" layoutY="523.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="10.0" prefWidth="166.0" styleClass="darkButton" text="Register" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="register_message" contentDisplay="CENTER" layoutX="21.0" layoutY="13.0" prefHeight="26.0" prefWidth="270.0" textFill="#ba2525" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="switch_to_login" layoutX="690.0" layoutY="560.0" mnemonicParsing="false" onAction="#loginSwitchButtonOnAction" prefHeight="26.0" prefWidth="197.0" styleClass="linkButtonSignup" text="Have account? Log In" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.23777777353922525" centerY="0.4732824136282652" radius="0.5654205874861957">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.007680491551459294">
+                                 <color>
+                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.4172709584236145" green="0.7646465301513672" blue="0.8105263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="sonedePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <AnchorPane prefHeight="600.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="600.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/background.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="close_button1" layoutX="862.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
+                  <GridPane alignment="CENTER" layoutX="67.0" layoutY="160.0" prefHeight="373.0" prefWidth="480.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="283.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="0.0" prefWidth="41.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label contentDisplay="CENTER" prefHeight="113.0" prefWidth="257.0" style="-fx-text-alignment: center;" styleClass="welcomeText" text="For inqueries about your SONEDE information call : 71 887 000" textFill="#f56b9b" textOverrun="CENTER_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Berlin Sans FB" size="25.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="160.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/sonedeLogo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" prefHeight="190.0" prefWidth="38.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="sonede_reference_field" alignment="CENTER" layoutX="524.0" layoutY="223.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Reference" styleClass="textField2" />
+                  <TextField fx:id="sonede_phone_field" alignment="CENTER" layoutX="524.0" layoutY="267.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Associated number" styleClass="textField2" />
+                  <Button fx:id="sonede_synchronize_button" layoutX="561.0" layoutY="373.0" mnemonicParsing="false" onAction="#sonedeSynchronizeButtonOnAction" prefHeight="156.0" prefWidth="126.0" styleClass="sycnhronizeButton">
+                     <graphic>
+                        <ImageView fitHeight="158.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" styleClass="sycnhronizeButton">
+                           <image>
+                              <Image url="@../Image/synchronize.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <left>
+            <AnchorPane prefHeight="600.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="home_view" fitHeight="600.0" fitWidth="400.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../public/Images/homedark.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="600.0" prefWidth="500.0" styleClass="homeBackground" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="close_button" layoutX="462.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="8.0" prefWidth="6.0" styleClass="closeButton" text="X" textFill="WHITE" />
+                  <TextField fx:id="email_field" alignment="CENTER" layoutX="174.0" layoutY="272.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Email" styleClass="textField2" />
+                  <PasswordField fx:id="password_field" alignment="CENTER" layoutX="174.0" layoutY="317.0" opacity="0.9" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="textField2" />
+                  <Button fx:id="login_button" layoutX="191.0" layoutY="476.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="166.0" styleClass="darkButton" text="Log In" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="logo_view" fitHeight="148.0" fitWidth="115.0" layoutX="220.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../public/Images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="login_message" contentDisplay="CENTER" layoutX="23.0" layoutY="13.0" prefHeight="26.0" prefWidth="218.0" textAlignment="CENTER" textFill="#ba2525" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="switch_to_register" layoutX="290.0" layoutY="560.0" mnemonicParsing="false" onAction="#registerSwitchButtonOnAction" prefHeight="26.0" prefWidth="197.0" styleClass="linkButtonLogin" text="New here? Create Account" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.23777777353922525" centerY="0.4732824136282652" radius="0.5654205874861957">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.007680491551459294">
+                                 <color>
+                                    <Color red="0.1451462060213089" green="0.2490253448486328" blue="0.7684210538864136" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.4172709584236145" green="0.7646465301513672" blue="0.8105263113975525" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </right>
       </BorderPane>
    </children>
 </StackPane>

@@ -2,12 +2,15 @@ package GUI;
 
 import Database.Connector;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 
 public class Main extends Application {
@@ -20,6 +23,7 @@ public class Main extends Application {
         root.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
         primaryStage.show();
     }
+
 
 
     public static void main(String[] args) {
