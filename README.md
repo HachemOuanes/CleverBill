@@ -12,7 +12,7 @@ User Interface:
 
 3 librarires must be fully configured and satisfied in order for this project ot be ran.
 
-### Download Links
+## Download Links
 
 - Java JDK 15 : https://www.techspot.com/downloads/5552-java-15-jdk.html
   
@@ -21,11 +21,11 @@ User Interface:
 - MySQL Java Connector : https://dev.mysql.com/downloads/connector/j
   
 
-### Configuration
+## Configuration
 
 After these three libraries are downloaded they must be configured for project structure. It is recommended that Intellij is used as a default Java IDE.
 
-#### Steps
+## Steps
 
 1. Open Project Stucture (File - Project Strcuture).
   
@@ -48,12 +48,12 @@ After these three libraries are downloaded they must be configured for project s
 
        MacOS : for macOS users path name should not be wrapped in double quotes.
 
-#### Wrap Up
+## Wrap Up
 
 Now you should be able to build this project as in compile it properly and run on Java's virtual machine.
 
 for further informaton about JavaFX : https://openjfx.io/openjfx-docs
 
-#### Build
+## Build
 
 For building Information : https://www.jetbrains.com/help/idea/compiling-applications.html#run_packaged_jar
